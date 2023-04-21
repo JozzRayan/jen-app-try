@@ -1,27 +1,10 @@
-node{
-
-stage (‘scm checkout’) {
-
-git ‘https://github.com/<github repo>'
-
+pipeline {
+    agent any
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
 }
-
-}
-
-node{
-
-stage (‘scm checkout’) {
-
-git (‘https://github.com/jen-app-try')
-
-}
-
-stage (‘package stage’) {
-
-sh label: ‘’, script: ‘mvn clean package ‘
-
-}
-
-}
-
-     
